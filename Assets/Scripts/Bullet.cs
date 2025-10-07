@@ -90,6 +90,12 @@ public class Bullet : MonoBehaviour
             {
                 enemy.TakeDamage(1);
                 GameManager.Instance.AddScore(100);
+                if (GameManager.Instance.scorePopupPrefab)
+                {
+                    var p = Instantiate(GameManager.Instance.scorePopupPrefab, other.transform.position, Quaternion.identity);
+                    p.GetComponent<ScorePopup>()?.Setup(100);
+                }
+
                 Destroy(gameObject); // Destroy bullet
             }
         }

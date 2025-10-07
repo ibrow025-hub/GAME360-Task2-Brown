@@ -52,11 +52,23 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        StartCoroutine(Flash());
 
         if (health <= 0)
         {
             Die();
         }
+    }
+
+    private System.Collections.IEnumerator Flash()
+    {
+        var sr = GetComponentInChildren<SpriteRenderer>();
+        if (sr == null) yield break;
+
+        Color orig = sr.color;
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.06f);
+        sr.color = orig;
     }
 
     private void Die()

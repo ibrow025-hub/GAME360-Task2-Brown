@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     //public TMP_Text scoreText;
 
+    [Header("FX")]
+    public GameObject scorePopupPrefab;
+
+
     private void Awake()
     {
         // Singleton pattern implementation
