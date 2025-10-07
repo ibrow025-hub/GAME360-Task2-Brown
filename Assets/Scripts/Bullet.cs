@@ -96,7 +96,7 @@ public class Bullet : MonoBehaviour
                     p.GetComponent<ScorePopup>()?.Setup(100);
                 }
                 GameManager.Instance.PunchFeel(other.transform.position);
-
+                
 
                 Destroy(gameObject); // Destroy bullet
             }
