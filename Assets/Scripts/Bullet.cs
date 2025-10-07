@@ -95,6 +95,8 @@ public class Bullet : MonoBehaviour
                     var p = Instantiate(GameManager.Instance.scorePopupPrefab, other.transform.position, Quaternion.identity);
                     p.GetComponent<ScorePopup>()?.Setup(100);
                 }
+                GameManager.Instance.PunchFeel(other.transform.position);
+
 
                 Destroy(gameObject); // Destroy bullet
             }

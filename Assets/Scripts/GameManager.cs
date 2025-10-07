@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [Header("FX")]
     public GameObject scorePopupPrefab;
 
+    [Header("Feel")]
+    public CameraShake2D shaker;
+    private bool slowmoActive = false;
 
     private void Awake()
     {
@@ -103,6 +106,28 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Enemy killed! Total enemies defeated: {enemiesKilled}");
     }
 
+
+    public void PunchFeel(Vector3 at, bool doSlowmo = true)
+    {
+        // screen shake
+        if (shaker) shaker.Shake(0.1f, 0.12f);
+
+        // micro slow-mo
+        if (doSlowmo && !slowmoActive)
+        {
+            StartCoroutine(SlowmoPulse());
+        }
+    }
+
+    private System.Collections.IEnumerator SlowmoPulse()
+    {
+        slowmoActive = true;
+        float old = Time.timeScale;
+        Time.timeScale = 0.85f;
+        yield return new WaitForSecondsRealtime(0.07f);
+        Time.timeScale = old;
+        slowmoActive = false;
+    }
 
     public void CollectiblePickedUp(int value)
     {

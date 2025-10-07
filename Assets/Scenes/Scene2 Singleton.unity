@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -578,6 +579,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d2a2ea986ce4245b066c2b90a82e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &567941027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1324,8 @@ MonoBehaviour:
   livesText: {fileID: 1843584629}
   enemiesKilledText: {fileID: 1157433866}
   gameOverPanel: {fileID: 1077280299}
-  scorePopupPrefab: {fileID: 0}
+  scorePopupPrefab: {fileID: 1262219941}
+  shaker: {fileID: 519420033}
 --- !u!1 &1021244110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1880,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209858148}
   m_CullTransparentMesh: 1
+--- !u!1 &1262219941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6937960796739330685, guid: ee88b0a819920a24ebdcb8de90435d92, type: 3}
+  m_PrefabInstance: {fileID: 728975907451283136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1321942663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 493050431355530651, guid: 5fd123a49c3e5584cbee8d7649bead11, type: 3}
@@ -2851,6 +2870,10 @@ PrefabInstance:
     - target: {fileID: 1693146460572000821, guid: ee88b0a819920a24ebdcb8de90435d92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929411762664283107, guid: ee88b0a819920a24ebdcb8de90435d92, type: 3}
+      propertyPath: m_text
+      value: +score!
       objectReference: {fileID: 0}
     - target: {fileID: 6937960796739330685, guid: ee88b0a819920a24ebdcb8de90435d92, type: 3}
       propertyPath: m_Name
